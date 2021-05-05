@@ -14,15 +14,16 @@
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
-  return view('welcome');
+    return view('welcome');
 });
 // routes/web.php
 // định nghĩa url cho chức năng, Laravel có chuẩn
 // RESTFUL: GET, POST, PUT, PATCH, DELETE
 // Route thêm mới sản phẩm:
-Route::get('product/create',
-[ProductController::class, 'create']);
+Route::get('product/create', [ProductController::class, 'create']);
 //public/product/create
 // Route lưu sp của chức năng thêm mới
-Route::post('product/createSave',
-    [ProductController::class, 'createSave']);
+Route::post('product/createSave', [ProductController::class, 'createSave']);
+
+// Route hiển thị sản phẩm
+Route::get('danh-sach-san-pham.html', [ProductController::class, 'index']);
